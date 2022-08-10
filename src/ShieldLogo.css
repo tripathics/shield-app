@@ -1,0 +1,14 @@
+.ShieldLogo {
+    height: 100%;
+    min-width: fit-content;
+}
+
+.ShieldLogo > p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.logoSvgImg {
+    vertical-align: middle;
+}

@@ -1,0 +1,107 @@
+section#login-register {
+    padding: 0 5.15rem 0 0;
+}
+
+.form-control>div {
+    margin: 1rem 0;
+}
+
+.form-control label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-control input {
+    display: inline-block;
+    box-shadow: inset 0 0.0625rem 0.0625rem rgba(0, 0, 0, 0.075);
+    padding: .63rem 3.13rem .63rem .94rem;
+    height: 3.125rem;
+    color: #000000;
+    vertical-align: middle;
+    border: 0.0625rem solid #4A4A4A;
+    font-size: 1rem;
+    line-height: 1.6em;
+    margin: 0.625em 0 0 0;
+    border-radius: 4px;
+    width: 65%;
+}
+
+.form-control button {
+    background-color: #000000;
+    border: 0;
+    border-color: #000000;
+    border-radius: 4px;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.143em;
+    min-width: 9.4rem;
+    padding: .938rem .938rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 30%;
+    height: 3rem;
+    margin: 1.875rem auto 1.25rem 0;
+}
+
+div.show-passwd {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+div.show-passwd>label {
+    font-weight: normal;
+}
+
+.form-control input[type="checkbox"] {
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+}
+
+div.pref {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 65%;
+}
+
+
+
+@media only screen and (max-width: 925px) {
+    header>h1 {
+        font-size: 2.5rem;
+        line-height: 1;
+        margin-bottom: 1rem;
+    }
+}
+
+@media only screen and (max-width: 710px) {
+
+    .form-control input,
+    .form-control button {
+        width: 100%;
+    }
+
+    div.pref {
+        width: 100%;
+    }
+
+    section#login-register {
+        padding-right: 4rem;
+    }
+}
+
+@media only screen and (max-width: 555px) {
+    div.pref {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
