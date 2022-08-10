@@ -1,0 +1,60 @@
+header.hero {
+    height: calc(100vh - var(--nav-height));
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    no-repeat url(./assets/hero1.jpg) center center;
+    background-size: cover;
+}
+
+main {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+}
+
+.hero-txt {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+
+.hero-txt > h1 {
+    font-size: 4.5rem;
+    letter-spacing: 0.015rem;
+    font-weight: 300;
+    filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.5));
+}
+
+.hero-txt > p {
+    font-size: 1.1rem;
+    line-height: 1.3;
+} 
+
+section.container {
+    margin: 5rem auto;
+    text-align: center;
+}
+
+section.container > h2 {
+    font-size: 3.29rem;
+    margin: 0.5rem 0;
+    font-weight: 700;
+    letter-spacing: -0.0175rem;
+}
+
+section.container > p {
+    font-weight: 350;
+    margin: 1.6rem 0;
+    line-height: 1.5;
+    letter-spacing: -0.01rem;
+    color: var(--gray-9);
+}
+
+/* team */
+div.team {
+    display: flex;
+    flex-direction: row;
+}
+

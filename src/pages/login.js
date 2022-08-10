@@ -1,8 +1,9 @@
 import React from 'react'
+import '../Login.css'
 
 const Login = () => {
     return (
-        <div>
+        <div className='container'>
             <header className="segment">
                 <h1>Sign in to your SHIELD profile</h1>
                 <h3>Sign in to your existing account</h3>
@@ -22,7 +23,7 @@ const Login = () => {
                         </div>
                     </div>
                     <div className="inp pref">
-                        <a href="">Forgot Password?</a>
+                        <a href="/">Forgot Password?</a>
                         <div className="inp show-passwd">
                             <input type="checkbox" name="show-passwd" id="show-passwd" />
                             <label for="remember-me">Remember me</label>
