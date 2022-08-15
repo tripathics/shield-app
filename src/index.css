@@ -34,27 +34,131 @@ main {
 
 section.container {
     margin: 5rem auto;
+    max-width: 940px;
     text-align: center;
 }
 
 section.container > h2 {
     font-size: 3.29rem;
     margin: 0.5rem 0;
-    font-weight: 700;
-    letter-spacing: -0.0175rem;
+    font-weight: 600;
 }
 
 section.container > p {
+    font-size: 1.25rem;
     font-weight: 350;
     margin: 1.6rem 0;
     line-height: 1.5;
-    letter-spacing: -0.01rem;
-    color: var(--gray-9);
+    letter-spacing: -0.005rem;
+    color: var(--gray-8);
 }
 
 /* team */
 div.team {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    margin: 5rem auto;
+    gap: 0.1rem;
+    max-width: 980px;
 }
 
+/* team member profile */
+.dp-wrapper {
+    overflow: hidden;
+}
+
+.dp {
+    max-width: 400px;
+    max-height: 400px;
+    width: 100%;
+    height: auto;
+}
+
+.profile-name {
+    font-weight: 300;
+    line-height: 0.9;
+    margin: 0.3rem 0;
+    text-align: left;
+    font-size: 1.7rem;
+}
+
+@media screen and (min-width: 710px) {
+    .profile:nth-child(1) > .profile-card {
+        margin: 0rem 0 2rem;
+    }
+    .profile:nth-child(2) > .profile-card {
+        margin: 5rem 0 2rem;
+    }
+    .profile:nth-child(3) > .profile-card {
+        margin: 10rem 0 2rem;
+    }
+    .profile:nth-child(4) > .profile-card {
+        margin: 15rem 0 2rem;
+    }
+}
+@media screen and (max-width: 925px) and (min-width: 710px) {
+    .profile-name {
+        font-size: 1.3rem;
+        font-weight: 350;
+    }
+}
+@media screen and (max-width: 710px) {
+    div.team {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    .profile {
+        margin: 0;
+    }
+}
+@media screen and (max-width: 550px) {
+    .profile-name {
+        font-size: 1.3rem;
+        font-weight: 350;
+    }
+}
+@media screen and (max-width: 400px) {
+    .profile-name {
+        font-size: 1.15rem;
+        font-weight: 350;
+    }
+    .team {
+        gap: 0.8rem;
+    }
+}
+
+.scroll-wrapper {
+    overflow-x: scroll;
+}
+
+.scroll-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.card {
+    min-width: 336px;
+    text-align: left;
+}
+
+.img-wrapper {
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.img-wrapper > img {
+    width: 100%;
+    height: auto;
+}
+
+.card h3 {
+    font-weight: 300;
+    line-height: 0.9;
+    margin: 0.3rem 0;
+    text-align: left;
+    font-size: 1.7rem;
+}
