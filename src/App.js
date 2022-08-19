@@ -7,6 +7,7 @@ import Layout from './components/Layout/layout'
 // pages
 import Home from './pages';
 import Login from './pages/login';
+import Dashboard from './pages/dashboard';
 
 class App extends Component {
   render() {
@@ -21,6 +22,11 @@ class App extends Component {
           <Route exact path="/login" element={
             <Layout>
               <Login />
+            </Layout>
+          } />
+          <Route exact path="/dashboard" element={
+            <Layout>
+              <Dashboard />
             </Layout>
           } />
         </Routes>

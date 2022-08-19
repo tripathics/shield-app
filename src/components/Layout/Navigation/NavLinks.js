@@ -10,8 +10,8 @@ const NavLink = (props) => {
 
 const NavLinks = (props) => {
   const { links } = props
-  const navInner = links.map(link => {
-    return <NavLink linkTxt={link.linkTxt} link={link.link} />
+  const navInner = links.map((link, i) => {
+    return <NavLink key={i} linkTxt={link.linkTxt} link={link.link} />
   });
   return (
     <ul className='nav-links'>

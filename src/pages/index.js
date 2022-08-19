@@ -1,6 +1,71 @@
 import React from 'react'
 import '../index.css'
 
+const CarauselCard = (props) => {
+  const {imgsrc, title, subtitle} = props
+  return (
+    <div className='card'>
+      <div className='img-wrapper'>
+        <img src={`./media/cases/${imgsrc}`} alt='decoration' />
+      </div>
+      <h3>{title}</h3>
+      <p>{subtitle}</p>
+    </div>
+  )
+}
+
+const Carousel = () => {
+  const cards = [
+    {
+      imgsrc: "stock.jpg",
+      title: 'Less humans',
+      subtitle: 'It reduces the human workforce and physical intervention.' 
+    },
+    {
+      imgsrc: "stock.jpg",
+      title: 'Minimal cost',
+      subtitle: 'It provides world-class security at a minimal cost.' 
+    },
+    {
+      imgsrc: "stock.jpg",
+      title: 'Secure from any place',
+      subtitle: 'The box can be remotely secured from any place.' 
+    },
+    {
+      imgsrc: "stock.jpg",
+      title: 'Tamper proof',
+      subtitle: 'If any evil deed or breakage occurs, it can generate notifications to the authorities..' 
+    },
+    {
+      imgsrc: "stock.jpg",
+      title: 'Track it from anywhere',
+      subtitle: 'The box comes with inbuilt GPS to track it in realtime.' 
+    },
+    {
+      imgsrc: "stock.jpg",
+      title: 'Get notified via SMS and phone call',
+      subtitle: 'In places with poor or no internet connectiviey, the box can notify via SMS and phone call to the registered mobile.' 
+    },
+    {
+      imgsrc: "stock.jpg",
+      title: 'Wireless charging',
+      subtitle: 'Wireless charging comes built in the box to easily recharge the battery during transportation.' 
+    }
+  ]
+
+  const cardsComponent = cards.map((card, i) => {
+    return <CarauselCard key={i} imgsrc={card.imgsrc} title={card.title} subtitle={card.subtitle} />
+  })
+
+  return (
+    <div className='scroll-wrapper'>
+      <div className='scroll-cards'>
+      {cardsComponent}
+      </div>
+    </div>
+  )
+}
+
 const Home = () => {
   return (
     <div>
@@ -25,79 +90,13 @@ const Home = () => {
           <li>Tampering of EVM.</li>
         </ul>
       </section>
-      <section className='container'>
+
+      <section className='container carousel'>
         <h2>Why SHIELD?</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, iure.</p>
-        <ul>
-          <li>It reduces the human workforce and physical intervention.</li>
-          <li>It provides world-class security at a minimal cost.</li>
-          <li>The box can be remotely secured form any place.</li>
-          <li>If any evil deed or breakage occurs, it can generate notifications to the authorities.</li>
-          <li>Live location using GPS tracking.</li>
-          <li>Real-time monitoring of the environment.</li>
-          <li>If there is no facility of internet, the box will notify via SMS and Phone Call to the registered mobile.</li>
-          <li>Wireless charging.</li>
-        </ul>
+        <Carousel />
       </section>
-      {/* scroll */}
-      <section className='container'>
-        <h2>Why SHIELD?</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, iure.</p>
-        <div className='scroll-wrapper'>
-          <div className='scroll-cards'>
-            
-            <div className='card'>
-              <div className='img-wrapper'>
-                <img src={require('../assets/bilal-mansuri-wH4cOMtOkNU-unsplash.jpg')} alt='decoration'/>
-              </div>
-              <h3>Reduce humans in the workforce</h3>
-              <p>It reduces the human workforce and physical intervention.</p>
-            </div>
-            
-            <div className='card'>
-              <div className='img-wrapper'>
-                <img src={require('../assets/bilal-mansuri-wH4cOMtOkNU-unsplash.jpg')} alt='decoration'/>
-              </div>
-              <h3>Reduce humans in the workforce</h3>
-              <p>It reduces the human workforce and physical intervention.</p>
-            </div>
-            
-            <div className='card'>
-              <div className='img-wrapper'>
-                <img src={require('../assets/bilal-mansuri-wH4cOMtOkNU-unsplash.jpg')} alt='decoration'/>
-              </div>
-              <h3>Reduce humans in the workforce</h3>
-              <p>It reduces the human workforce and physical intervention.</p>
-            </div>
-            
-            <div className='card'>
-              <div className='img-wrapper'>
-                <img src={require('../assets/bilal-mansuri-wH4cOMtOkNU-unsplash.jpg')} alt='decoration'/>
-              </div>
-              <h3>Reduce humans in the workforce</h3>
-              <p>It reduces the human workforce and physical intervention.</p>
-            </div>
-            
-            <div className='card'>
-              <div className='img-wrapper'>
-                <img src={require('../assets/bilal-mansuri-wH4cOMtOkNU-unsplash.jpg')} alt='decoration'/>
-              </div>
-              <h3>Reduce humans in the workforce</h3>
-              <p>It reduces the human workforce and physical intervention.</p>
-            </div>
-            
-            <div className='card'>
-              <div className='img-wrapper'>
-                <img src={require('../assets/bilal-mansuri-wH4cOMtOkNU-unsplash.jpg')} alt='decoration'/>
-              </div>
-              <h3>Reduce humans in the workforce</h3>
-              <p>It reduces the human workforce and physical intervention.</p>
-            </div>
-            
-            
-          </div>
-        </div>
-      </section>
+
       <section className='container'>
         <h2>Our team</h2>
         <p>Team Revolutionists!</p>
