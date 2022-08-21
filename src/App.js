@@ -8,6 +8,7 @@ import Layout from './components/Layout/layout'
 import Home from './pages';
 import Login from './pages/login';
 import Dashboard from './pages/dashboard';
+import Board from './pages/board';
 
 class App extends Component {
   render() {
@@ -26,7 +27,12 @@ class App extends Component {
           } />
           <Route exact path="/dashboard" element={
             <Layout>
-              <Dashboard />
+              <Dashboard/>
+            </Layout>
+          } />
+          <Route exact path="/board" element={
+            <Layout>
+              <Board />
             </Layout>
           } />
         </Routes>

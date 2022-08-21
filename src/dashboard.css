@@ -1,0 +1,100 @@
+/* dashnboard.css */
+section.dash-container {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 2rem 1.5rem;
+}
+
+.dash-container > h3 {
+    font-weight: 400;
+    margin: 1rem 0;
+    color: var(--gray-7);
+}
+
+.dash-hero {
+    background-color: rgb(36 105 179);
+    height: 50vh;
+    position: relative;
+}
+
+.dash-hero .hero-heading {
+    padding: 2rem 0;
+    font-weight: 400;
+    font-size: 3.2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dash-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.dash-card {
+    /* background-color: rgb(211, 243, 243); */
+    border-radius: 0.5rem;
+    border: solid 1px var(--gray-4);
+    overflow: hidden;
+    box-shadow: 0 3px 6px -3px var(--gray-45);
+    transition: box-shadow 0.08s ease-out;
+}
+
+.dash-card:hover {
+    box-shadow: 0 4px 12px -4px var(--gray-6);
+}
+
+
+.dash-card .img-wrapper {
+    max-height: 200px;
+}
+
+.dash-card-desc {
+    padding: 0.8rem;
+}
+
+.dash-card-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.dash-card-title > a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.1s ease-in;
+}
+.dash-card-title > a:hover {
+    color: var(--blue-3);
+    text-decoration: none;
+}
+
+.dash-card-subtitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.3rem;
+}
+
+.dash-card-subtitle p {
+    font-size: 0.8rem;
+    color: var(--gray-8);
+}
+
+.dash-card-subtitle div.Active,
+.dash-card-subtitle div.Inactive {
+    display: inline-block;
+    height: 0.6rem;
+    width: 0.6rem;
+    border-radius: 50%;
+}
+
+.dash-card-subtitle div.Active {
+    background-color: var(--green);
+}
+.dash-card-subtitle div.Inactive {
+    background-color: var(--rainbow-5);
+}
