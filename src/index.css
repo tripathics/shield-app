@@ -137,28 +137,125 @@ div.team {
 .container.carousel {
     width: 100%;
     max-width: 1920px;
-    margin: 0;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .scroll-wrapper {
     overflow-x: hidden;
+    padding: 0.3rem;
 }
-
+.carousel-container {
+    --card-width: 300px;
+    position: relative;
+    height: 550px;
+}
+.explore {
+    position: absolute;
+    width: calc(var(--card-width) + 2rem);
+    height: 100%;
+    background-color: #ebebeb;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 0.25rem;
+}
 .scroll-cards {
     display: flex;
     flex-direction: row;
     gap: 2rem;
+    padding: 1rem 0;
+    justify-content: center;
+    animation-name: move;
+
 }
 
-.card {
-    min-width: 352px;
+.move-right {
+    animation: moveright 0.65s ease-out;
+    animation-fill-mode: forwards;
+}
+
+.move-left {
+    animation: moveleft 0.65s ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes moveleft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(var(--card-width) + 2rem));
+    }
+}
+
+@keyframes moveright {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-1 * (var(--card-width) + 2rem)));
+    }
+}
+
+
+.carousel-scroll-btns {
+    display: flex;
+    gap: calc(var(--card-width) + 2.5rem);
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.carousel-scroll-btns > button {
+    border: none;
+    background-color: transparent;
+    height: 5rem;
+    width: 5rem;
+}
+
+.carousel-slider > svg {
+    height: 4rem;
+    width: 4rem;
+    transition: all 0.4s ease;
+}
+.carousel-slider:hover > svg {
+    transform: scale(1.2);
+}
+
+.carousel-card {
+    min-width: 300px;
     text-align: left;
 }
+
+.card-desc {
+    /* display: none; */
+    opacity: 0;
+}
+.active-card .card-desc {
+    /* display: block; */
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
+
+.carousel-card.active-card {
+    transition: opacity 0.2s ease;
+}
+
+#carouselCards > .carousel-card:not(.active-card) {
+    opacity: 0.7;
+    transition: opacity 0.1s ease;
+    z-index: -1;
+}
+
 
 .img-wrapper {
     overflow: hidden;
     width: 100%;
     aspect-ratio: 1/1;
+    box-shadow: 0 3px 8px -2px var(--gray-6);
+    border: solid 1px var(--gray-4);
 }
 
 .img-wrapper > img {
@@ -166,10 +263,16 @@ div.team {
     height: auto;
 }
 
-.card h3 {
+.card-desc > h3 {
     font-weight: 300;
     line-height: 0.9;
-    margin: 2rem 0 0.8rem;
+    margin: 3rem 0 1.5rem;
     text-align: left;
-    font-size: 1.7rem;
+    font-size: 1.8rem;
+    color: var(--blue-3);
+}
+
+.card-desc > p {
+    font-size: 1rem;
+    color: var(--gray-7);
 }

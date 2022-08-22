@@ -1,21 +1,38 @@
 import React from 'react'
 import '../index.css'
 
-const CarauselCard = (props) => {
-  const {imgsrc, title, subtitle} = props
+const CarouselCard = (props) => {
+  const {imgsrc, title, subtitle, id, className} = props
   return (
-    <div className='card'>
+    <div className={`carousel-card ${className}`} id={id}>
       <div className='img-wrapper'>
         <img src={`./media/cases/${imgsrc}`} alt='decoration' />
       </div>
-      <h3>{title}</h3>
-      <p>{subtitle}</p>
+      <div className='card-desc'>
+        <h3>{title}</h3>
+        <p>{subtitle}</p>
+      </div>
     </div>
   )
 }
 
 const Carousel = () => {
   const cards = [
+    {
+      imgsrc: "1.jpg",
+      title: 'Track it from anywhere',
+      subtitle: 'The box comes with inbuilt GPS to track it in realtime.' 
+    },
+    {
+      imgsrc: "2.jpg",
+      title: 'Get notified via SMS and phone call',
+      subtitle: 'In places with poor or no internet connectiviey, the box can notify via SMS and phone call to the registered mobile.' 
+    },
+    {
+      imgsrc: "3.jpg",
+      title: 'Wireless charging',
+      subtitle: 'Wireless charging comes built in the box to easily recharge the battery during transportation.' 
+    },
     {
       imgsrc: "stock.jpg",
       title: 'Less humans',
@@ -36,31 +53,85 @@ const Carousel = () => {
       title: 'Tamper proof',
       subtitle: 'If any evil deed or breakage occurs, it can generate notifications to the authorities..' 
     },
-    {
-      imgsrc: "stock.jpg",
-      title: 'Track it from anywhere',
-      subtitle: 'The box comes with inbuilt GPS to track it in realtime.' 
-    },
-    {
-      imgsrc: "stock.jpg",
-      title: 'Get notified via SMS and phone call',
-      subtitle: 'In places with poor or no internet connectiviey, the box can notify via SMS and phone call to the registered mobile.' 
-    },
-    {
-      imgsrc: "stock.jpg",
-      title: 'Wireless charging',
-      subtitle: 'Wireless charging comes built in the box to easily recharge the battery during transportation.' 
-    }
   ]
 
   const cardsComponent = cards.map((card, i) => {
-    return <CarauselCard key={i} imgsrc={card.imgsrc} title={card.title} subtitle={card.subtitle} />
+    const id = `carouselCard${(i+4)%7}`;
+    if (id === 'carouselCard0') {
+      return <CarouselCard key={i} id={id} className="active-card" imgsrc={card.imgsrc} title={card.title} subtitle={card.subtitle} />
+    }
+    else {
+      return <CarouselCard key={i} id={id} className="" imgsrc={card.imgsrc} title={card.title} subtitle={card.subtitle} />
+    }
   })
+
+  const carouselSlide = (direction) => {
+    const active = document.getElementsByClassName('active-card');
+    if (active.length !== 0) {
+      let activeId = active[0].id
+      let intId = parseInt(activeId.slice(12, activeId.length));
+      document.getElementById(activeId).classList.toggle('active-card');
+
+      // select all cards
+      let cardsContainer = document.getElementById('carouselCards');
+
+      if (direction === 'right') {
+        cardsContainer.classList.add('move-right');
+      } else if (direction === 'left') {
+        cardsContainer.classList.add('move-left');
+      }
+
+      setTimeout(() => {
+        let nextId;
+        if (direction === 'right') {
+          cardsContainer.classList.remove('move-right');
+
+          nextId = `carouselCard${(intId + 1)%7}`;
+          cardsContainer.appendChild(
+            cardsContainer.removeChild(cardsContainer.firstChild)
+          ); 
+        }
+        else if (direction === 'left') {
+          cardsContainer.classList.remove('move-left');
+          
+          nextId = `carouselCard${(7 + intId - 1)%7}`;
+          cardsContainer.prepend(
+            cardsContainer.removeChild(cardsContainer.lastChild)
+          );
+        }
+        let next = document.getElementById(nextId);
+        next.classList.toggle('active-card');
+
+        console.log('timeout');
+      }, 700);
+    }
+  }
 
   return (
     <div className='scroll-wrapper'>
-      <div className='scroll-cards'>
-      {cardsComponent}
+      <div className='carousel-container'>
+        <div className='explore'></div>
+        <div className='carousel-scroll-btns'>
+          <button id='carouselSliderLeft' className='carousel-slider' onClick={() => carouselSlide('left')}>
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="40" r="39.5" stroke="#5B5ED5"/>
+              <line x1="59.071" y1="40.071" x2="23.071" y2="40.071" stroke="#5B5ED5" strokeWidth="2"/>
+              <line x1="28.6014" y1="33.5303" x2="21.5303" y2="40.6014" stroke="#5B5ED5" strokeWidth="1.5"/>
+              <line x1="28.5407" y1="46.6014" x2="21.4696" y2="39.5303" stroke="#5B5ED5" strokeWidth="1.5"/>
+            </svg>
+          </button>
+          <button id='carouselSliderRight' className='carousel-slider' onClick={() => carouselSlide('right')}>
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="40" r="39.5" stroke="#5B5ED5"/>
+              <line x1="21" y1="40" x2="57" y2="40" stroke="#5B5ED5" strokeWidth="2"/>
+              <line x1="51.4697" y1="46.5407" x2="58.5407" y2="39.4696" stroke="#5B5ED5" strokeWidth="1.5"/>
+              <line x1="51.5303" y1="33.4697" x2="58.6014" y2="40.5407" stroke="#5B5ED5" strokeWidth="1.5"/>
+            </svg>
+          </button>
+        </div>
+        <div id='carouselCards' className='scroll-cards'>
+          {cardsComponent}
+        </div>
       </div>
     </div>
   )
