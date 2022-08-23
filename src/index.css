@@ -134,9 +134,11 @@ div.team {
     }
 }
 
+/* carousel */
+
 .container.carousel {
     width: 100%;
-    max-width: 1920px;
+    max-width: 1680px;
     margin: 0 auto;
     padding: 0;
 }
@@ -147,12 +149,14 @@ div.team {
 }
 .carousel-container {
     --card-width: 300px;
+    --cards-gap: 2rem;
+    --card-height: 550px;
     position: relative;
-    height: 550px;
+    height: var(--card-height);
 }
 .explore {
     position: absolute;
-    width: calc(var(--card-width) + 2rem);
+    width: calc(var(--card-width) + var(--cards-gap));
     height: 100%;
     background-color: #ebebeb;
     top: 50%;
@@ -164,11 +168,10 @@ div.team {
 .scroll-cards {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: var(--cards-gap);
     padding: 1rem 0;
     justify-content: center;
     animation-name: move;
-
 }
 
 .move-right {
@@ -208,33 +211,31 @@ div.team {
     left: 50%;
     transform: translateX(-50%);
 }
-.carousel-scroll-btns > button {
+button.carousel-slider {
     border: none;
     background-color: transparent;
     height: 5rem;
     width: 5rem;
 }
 
-.carousel-slider > svg {
+button.carousel-slider > svg {
     height: 4rem;
     width: 4rem;
     transition: all 0.4s ease;
 }
-.carousel-slider:hover > svg {
+button.carousel-slider:hover > svg {
     transform: scale(1.2);
 }
 
 .carousel-card {
-    min-width: 300px;
+    min-width: var(--card-width);
     text-align: left;
 }
 
 .card-desc {
-    /* display: none; */
     opacity: 0;
 }
 .active-card .card-desc {
-    /* display: block; */
     opacity: 1;
     transition: opacity 0.3s ease-in;
 }
@@ -254,7 +255,7 @@ div.team {
     overflow: hidden;
     width: 100%;
     aspect-ratio: 1/1;
-    box-shadow: 0 3px 8px -2px var(--gray-6);
+    box-shadow: 0 2px 7px -2px var(--gray-6);
     border: solid 1px var(--gray-4);
 }
 
@@ -275,4 +276,45 @@ div.team {
 .card-desc > p {
     font-size: 1rem;
     color: var(--gray-7);
+}
+
+@media screen and (max-width: 550px) {
+    .carousel-container {
+        --card-width: 250px;
+        --card-gap: 1.5rem;
+        --card-height: 500px;
+    }
+    button.carousel-slider {
+        height: 4rem;
+        width: 4rem;
+    }
+    button.carousel-slider > svg {
+        height: 3.3rem;
+        width: 3.3rem;
+    }
+    .card-desc > h3 {
+        margin: 2.8rem 0 1.5rem;
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .carousel-container {
+        --card-width: 220px;
+        --card-gap: 1rem;
+        --card-height: 480px;
+    }
+    .card-desc > p {
+        font-size: 0.9rem;
+    }
+}
+@media screen and (max-width: 400px) {
+    .carousel-container {
+        --card-width: 180px;
+        --card-gap: 1rem;
+        --card-height: 420px;
+    }
+    .card-desc > h3 {
+        margin: 2rem 0 1rem;
+        font-size: 1.4rem;
+    }
 }

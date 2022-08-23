@@ -60,12 +60,19 @@ const Dashboard = () => {
   return (
     <div>
       <div className='dash-hero'>
-        <section className='dash-container'>
-          <h1 className='hero-heading'>
-            Welcome,<br/>
-            <span className='user-name'>User</span>
-          </h1>
-        </section>
+        <div className='dash-hero-inner-container'>
+          <section>
+            <h1 className='hero-heading'>
+              Welcome, Susham
+            </h1>
+
+          </section>
+          <section className='dash-dp-container'>
+            <div className='dash-dp'>
+              <img src='./media/cases/3.jpg' alt='Profie'/>
+            </div>
+          </section>
+        </div>
       </div>
       <section className='dash-container'>
         <h3>Your SHIELDs</h3>
