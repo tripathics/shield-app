@@ -19,14 +19,33 @@ section.dash-container {
     position: relative;
 }
 
-.dash-hero .hero-heading {
-    padding: 2rem 0;
-    font-weight: 400;
-    font-size: 3.2rem;
+.dash-hero-inner-container {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 850px;
+    display: flex;
+    justify-content: space-between;
 }
+.dash-dp {
+    overflow: hidden;
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    position: relative;
+}
+.dash-dp > img {
+    position: absolute;
+    top: -10%;
+    right: -40%;
+}
+
+.dash-hero .hero-heading {
+    font-weight: 400;
+    font-size: 3.2rem;
+}
+
 
 .dash-cards {
     display: grid;
