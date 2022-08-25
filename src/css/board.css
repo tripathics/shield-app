@@ -1,0 +1,10 @@
+/* board.css */
+
+.board.container.hero {
+    background-color: var(--gray-3);
+    margin: 0;
+    padding: 2rem;
+    height: 30vh;
+    max-width: unset;
+}
+

@@ -21,6 +21,7 @@
   --green-3: rgb(77, 137, 148);
   --green-4: rgb(48, 97, 157);
   --green-5: rgb(48, 55, 157);
+  --green-6: rgb(38, 44, 129);
   --red: rgb(243, 70, 70);
   --red-1: rgb(239, 207, 74);
   --red-2: rgb(224, 169, 68);
@@ -51,6 +52,7 @@
   --color-base: rgb(58, 63, 68);
 
   --nav-height: 4.375rem;
+  --footer-height: 10.25rem;
   font-size: 16px;
 }
 
@@ -63,6 +65,19 @@
 /* base font */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Raleway', sans-serif;;
+}
+
+main {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+}
+
+.app-main {
+  min-height: calc(100vh - var(--footer-height) - var(--nav-height));
 }
 
 header.segment {
@@ -98,3 +113,9 @@ header > h3 {
       display: none;
   }
 }
+
+.img-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+

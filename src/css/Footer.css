@@ -4,6 +4,7 @@ footer {
     background-color: var(--gray-9);
     padding: 2rem 1rem;
     color: #ccc;
+    min-height: var(--footer-height);
 }
 
 .footer > div.first {

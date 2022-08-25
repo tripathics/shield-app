@@ -1,0 +1,55 @@
+/* footer.scss */
+/****** footer ********/
+footer.app-footer {
+    background-color: var(--gray-9);
+    padding: 2rem 1rem;
+    color: #ccc;
+    min-height: var(--footer-height);
+}
+
+.app-footer {
+    div.first {
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    
+    .social {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        height: 4rem;
+        align-items: center;
+    }
+    
+    .socialSvg {
+        height: 2.5rem;
+        width: 2.5rem;
+        fill: rgb(207, 212, 217);
+    }
+    
+    .socialSvg:active {
+        fill: #adb5bd;
+    }
+    
+    .ftr-copy {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .app-footer {
+        div.first {
+            flex-direction: column;
+            gap: 1rem
+        }
+    
+        .socialSvg {
+            height: 2rem;
+            width: 2rem;
+        }
+    }
+}

@@ -1,10 +1,11 @@
 import React from 'react'
-import '../dashboard.css'
+// import '../dashboard.css'
+import '../scss/dashboard.scss'
 
 const Card = (props) => {
   const { boardName, boxState, imgsrc } = props
   return (
-    <div className='dash-card'>
+    <div className='card'>
       <div className='img-wrapper'>
         <img src={`./media/boards/${imgsrc}`} alt='board' />
       </div>
@@ -58,14 +59,11 @@ const Cards = () => {
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className='Dashboard'>
       <div className='dash-hero'>
-        <div className='dash-hero-inner-container'>
+        <div className='dash-hero-inner-container container'>
           <section>
-            <h1 className='hero-heading'>
-              Welcome, Susham
-            </h1>
-
+            <h1 className='hero-heading'>Welcome, Ruth</h1>
           </section>
           <section className='dash-dp-container'>
             <div className='dash-dp'>
@@ -74,7 +72,7 @@ const Dashboard = () => {
           </section>
         </div>
       </div>
-      <section className='dash-container'>
+      <section className='container content'>
         <h3>Your SHIELDs</h3>
         <Cards />
       </section>

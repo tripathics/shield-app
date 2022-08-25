@@ -1,5 +1,6 @@
 import React from 'react'
-import '../index.css'
+// import '../index.css'
+import '../scss/index.scss'
 
 const CarouselCard = (props) => {
   const {imgsrc, title, subtitle, id, className} = props
@@ -139,7 +140,7 @@ const Carousel = () => {
 
 const Home = () => {
   return (
-    <div>
+    <div className='Home'>
       <header className='hero'>
         <div className='hero-txt'>
           <h1>SHIELD</h1>
@@ -154,29 +155,16 @@ const Home = () => {
         <h2>SHIELD solves them all</h2>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit alias eaque pariatur quibusdam.</p>
         <div className='gallery'>
-        {/* <img src={require('../../public/media/hexagonPic/ironMann1.jpeg')} alt='Prince'/>
-        <img src={require('../../public/media/hexagonPic/ironMann1.jpeg')} alt='Prince'/>
-        <img src={require('../../public/media/hexagonPic/ironMann1.jpeg')} alt='Prince'/>
-        <img src={require('../../public/media/hexagonPic/ironMann1.jpeg')} alt='Prince'/>
-        <img src={require('../../public/media/hexagonPic/ironMann1.jpeg')} alt='Prince'/>
-        <img src={require('../../public/media/hexagonPic/ironMann1.jpeg')} alt='Prince'/>
-        <img src={require('../../public/media/hexagonPic/ironMann1.jpeg')} alt='Prince'/> */}
-        {/* <img src={require('https://picsum.photos/id/106/300/300')} alt='Prince'/>
-        <img src={require('https://picsum.photos/id/196/300/300')} alt='Prince'/>
-        <img src={require('https://picsum.photos/id/209/300/300')} alt='Prince'/>
-        <img src={require('https://picsum.photos/id/115/300/300')} alt='Prince'/>
-        <img src={require('https://picsum.photos/id/107/300/300')} alt='Prince'/>
-        <img src={require('https://picsum.photos/id/157/300/300')} alt='Prince'/>
-        <img src={require('https://picsum.photos/id/157/300/300')} alt='Prince'/> */}
-        <img src={require('../assets/team/hexagonPic/ironMann1.jpeg')} alt='Iron Man1' />
-        <img src={require('../assets/team/hexagonPic/ironMann2.jpeg')} alt='Iron Man2' />
-        <img src={require('../assets/team/hexagonPic/ironMann3.jpeg')} alt='Iron Man3' />
-        <img src={require('../assets/team/hexagonPic/ironMann4.jpeg')} alt='Iron Man4' />
-        <img src={require('../assets/team/hexagonPic/ironMann5.jpeg')} alt='Iron Man5' />
-        <img src={require('../assets/team/hexagonPic/ironMann6.jpeg')} alt='Iron Man6' />
-        <img src={require('../assets/team/hexagonPic/ironMann7.jpeg')} alt='Iron Man7' />
 
-      </div>
+          <img src={require('../assets/team/hexagonPic/ironMann1.jpeg')} alt='Iron Man1' />
+          <img src={require('../assets/team/hexagonPic/ironMann2.jpeg')} alt='Iron Man2' />
+          <img src={require('../assets/team/hexagonPic/ironMann3.jpeg')} alt='Iron Man3' />
+          <img src={require('../assets/team/hexagonPic/ironMann4.jpeg')} alt='Iron Man4' />
+          <img src={require('../assets/team/hexagonPic/ironMann5.jpeg')} alt='Iron Man5' />
+          <img src={require('../assets/team/hexagonPic/ironMann6.jpeg')} alt='Iron Man6' />
+          <img src={require('../assets/team/hexagonPic/ironMann7.jpeg')} alt='Iron Man7' />
+
+        </div>
         <ul>
           <li>Leaking of exam paper.</li>
           <li>Money looted in between transfers to ATM.</li>

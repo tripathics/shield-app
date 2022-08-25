@@ -8,7 +8,7 @@ import Layout from './components/Layout/layout'
 import Home from './pages';
 import Login from './pages/login';
 import Dashboard from './pages/dashboard';
-import Board from './pages/board';
+import Box from './pages/box';
 
 class App extends Component {
   render() {
@@ -16,23 +16,42 @@ class App extends Component {
       <Router>
         <Routes>
           <Route exact path="/" element={
-            <Layout>
+            <Layout navLinks={[
+              {
+                linkTxt: "Sign in",
+                link: '/login'
+              }
+            ]}>
               <Home />
             </Layout>
           } />
           <Route exact path="/login" element={
-            <Layout>
+            <Layout navLinks={[]}>
               <Login />
             </Layout>
           } />
           <Route exact path="/dashboard" element={
-            <Layout>
+            <Layout navLinks={[
+              {
+                linkTxt: "Sign out",
+                link: '/'
+              }
+            ]}>
               <Dashboard/>
             </Layout>
           } />
           <Route exact path="/board" element={
-            <Layout>
-              <Board />
+            <Layout navLinks={[
+              {
+                linkTxt: "Dashboard",
+                link: '/dashboard'
+              },
+              {
+                linkTxt: "Sign out",
+                link: '/'
+              }
+            ]}>
+              <Box />
             </Layout>
           } />
         </Routes>

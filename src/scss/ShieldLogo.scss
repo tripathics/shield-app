@@ -1,0 +1,19 @@
+/* shieldlogo.scss */
+a.ShieldLogo {
+    height: 100%;
+    min-width: fit-content;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.ShieldLogo {
+    p {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #fff;
+    }
+    
+    .logoSvgImg {
+        vertical-align: middle;
+    }
+}

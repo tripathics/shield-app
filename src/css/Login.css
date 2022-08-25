@@ -3,6 +3,11 @@ section#login-register {
     padding: 0 5.15rem 0 0;
 }
 
+.segment.login-header {
+    margin: 0 0 3.125rem;
+    padding: 3.125rem 0 0;
+}
+
 .form-control>div {
     margin: 1rem 0;
 }
