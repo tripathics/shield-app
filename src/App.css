@@ -11,6 +11,7 @@
   --gray-45: rgb(195, 202, 209);
   --gray-5: rgb(173, 181, 189);
   --gray-6: rgb(134, 142, 150);
+  --gray-65: rgb(93, 100, 107);
   --gray-7: rgb(75, 80, 86);
   --gray-8: rgb(49, 54, 59);
   --gray-9: rgb(33, 37, 41);
@@ -111,6 +112,9 @@ header > h3 {
 @media screen and (max-width: 500px) {
   #nav-bar .ShieldLogoTxt {
       display: none;
+  }
+  :root {
+    --nav-height: 4rem;
   }
 }
 

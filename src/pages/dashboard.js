@@ -63,7 +63,7 @@ const Dashboard = () => {
       <div className='dash-hero'>
         <div className='dash-hero-inner-container container'>
           <section>
-            <h1 className='hero-heading'>Welcome, Ruth</h1>
+            <h1 className='hero-heading'>Welcome, Susham</h1>
           </section>
           <section className='dash-dp-container'>
             <div className='dash-dp'>
