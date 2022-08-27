@@ -156,13 +156,12 @@ const Home = () => {
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit alias eaque pariatur quibusdam.</p>
         <div className='gallery'>
 
-          <img src={require('../assets/team/hexagonPic/ironMann1.jpeg')} alt='Iron Man1' />
-          <img src={require('../assets/team/hexagonPic/ironMann2.jpeg')} alt='Iron Man2' />
-          <img src={require('../assets/team/hexagonPic/ironMann3.jpeg')} alt='Iron Man3' />
-          <img src={require('../assets/team/hexagonPic/ironMann4.jpeg')} alt='Iron Man4' />
-          <img src={require('../assets/team/hexagonPic/ironMann5.jpeg')} alt='Iron Man5' />
-          <img src={require('../assets/team/hexagonPic/ironMann6.jpeg')} alt='Iron Man6' />
-          <img src={require('../assets/team/hexagonPic/ironMann7.jpeg')} alt='Iron Man7' />
+          <img id="topp" src="https://picsum.photos/id/1040/300/300" alt="a house on a mountain"/>
+    <img id="centerr" src="https://picsum.photos/id/106/300/300" alt="sime pink flowers"/>
+    <img id="left_top" src="https://picsum.photos/id/136/300/300" alt="big rocks with some trees"/>
+    <img id="right_top" src="https://picsum.photos/id/1039/300/300" alt="a waterfall, a lot of tree and a great view from the sky"/>
+    <img id="left_bot" src="https://picsum.photos/id/110/300/300" alt="a cool landscape"/>
+    <img id="right_bot" src="https://picsum.photos/id/1047/300/300" alt="inside a town between two big buildings"/>
 
         </div>
         <ul>
