@@ -368,58 +368,74 @@
         align-items: center;
         gap: 3rem;
         flex-wrap: wrap;
+
+        // Photo Grid
+        .gallery {
+            --s: 150px;
+            --g: 10px;
+            display: grid;
+            margin: calc(var(--s) + var(--g) + 2.5rem) calc(var(--s) + var(--g));
+            width: fit-content;
+            
+            img {
+                grid-area: 1/1;
+                width: var(--s);
+                object-fit: cover;
+                clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+                transform: translate(var(--_x, 0), var(--_y, 0)) scale(var(--_t, 1));
+                cursor: pointer;
+                transition: .2s linear;
+            }
+            img:hover:not(#center) {
+                z-index: 1;
+                --_t: 1.12;
+            }
+        
+            #center {
+                clip-path: polygon(18% 0%, 82% 0%, 100% 62%, 50% 100%, 0% 62%);
+            }
+            #gImg1 {
+                --_y: calc(-100% - 1.2*var(--g));
+                clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+            }
+            #gImg2 {
+                --_x: calc(75% + 2.2*var(--g));
+                --_y: calc(-50% + 1.25*var(--g));
+            }
+            #gImg3 {
+                --_x: calc(75% - 3.2*var(--g));
+                --_y: calc(50% + 2.8*var(--g));
+            }
+            #gImg4 {
+                --_x: calc(-75% + 2.92*var(--g));
+                --_y: calc(50% + 2.5*var(--g));
+            }
+            #gImg5 {
+                --_x: calc(-75% - 2.2*var(--g));
+                --_y: calc(-50% + 1.3*var(--g));
+            }
+        }
+        ul {
+            list-style-type: none;
+            text-align: left;
+            font-size: 1.1rem;
+            color: var(--gray-7);
+            li {
+                padding: 0.5rem;
+                margin: 0.2rem 0;
+                transition: 0.2s filter ease, 0.15s font-size ease;
+            }
+        }
     }
-
-    // Photo Grid
-    .gallery {
-        --s: 150px;
-        /* control the size */
-        --g: 10px;
-        /* control the gap */
-        display: grid;
-        margin: calc(var(--s) + var(--g) + 2.5rem) calc(var(--s) + var(--g));
-        width: fit-content;
-
-        img {
-            grid-area: 1/1;
-            width: var(--s);
-            /* aspect-ratio: 1.15; */
-            object-fit: cover;
-            /* clip-path: polygon(25% 0%, 75% 0%, 100% 50%,75% 100%,25% 100%,0 50%); */
-            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-            transform: translate(var(--_x, 0), var(--_y, 0)) scale(var(--_t, 1));
-            cursor: pointer;
-            transition: .2s linear;
-        }
-
-        img:hover {
-            z-index: 1;
-            --_t: 1.2;
-        }
     
-        #topp {
-            --_y: calc(-100% - 1.2*var(--g));
-            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    .gallery-container.gallery-hover {            
+        li.active {
+            color: var(--gray-10);
+            font-size: 1.2rem;
         }
-        #centerr {
-            clip-path: polygon(18% 0%, 82% 0%, 100% 62%, 50% 100%, 0% 62%);
-        }
-        #left_top {
-            --_x: calc(-75% - 2.2*var(--g));
-            --_y: calc(-50% + 1.3*var(--g));
-        }
-        #right_top {
-            --_x: calc(75% + 2.2*var(--g));
-            --_y: calc(-50% + 1.25*var(--g));
-        }
-        #left_bot {
-            --_x: calc(-75% + 2.92*var(--g));
-            --_y: calc(50% + 2.5*var(--g));
-        }
-        #right_bot {
-            --_x: calc(75% - 3.2*var(--g));
-            --_y: calc(50% + 2.8*var(--g));
+
+        li:not(.active) {
+            filter: opacity(0.45) blur(2px);
         }
     }
-
 }

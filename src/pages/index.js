@@ -25,7 +25,7 @@ const Carousel = () => {
       subtitle: 'The box comes with inbuilt GPS to track it in realtime.' 
     },
     {
-      imgsrc: "2.jpg",
+      imgsrc: "notification.jpg",
       title: 'Get notified via SMS and phone call',
       subtitle: 'In places with poor or no internet connectiviey, the box can notify via SMS and phone call to the registered mobile.' 
     },
@@ -35,7 +35,7 @@ const Carousel = () => {
       subtitle: 'Wireless charging comes built in the box to easily recharge the battery during transportation.' 
     },
     {
-      imgsrc: "stock.jpg",
+      imgsrc: "less-humans.jpeg",
       title: 'Less humans',
       subtitle: 'It reduces the human workforce and physical intervention.' 
     },
@@ -158,19 +158,19 @@ const Home = () => {
         <div className='gallery-container'>
           <div className='gallery'>
 
-            <img id="topp" src="https://picsum.photos/id/1040/300/300" alt="a house on a mountain" />
-            <img id="centerr" src={require('../assets/picgrid/centre.png')} alt="sime pink flowers" />
-            <img id="left_top" src="https://picsum.photos/id/136/300/300" alt="big rocks with some trees" />
-            <img id="right_top" src="https://picsum.photos/id/1039/300/300" alt="a waterfall, a lot of tree and a great view from the sky" />
-            <img id="left_bot" src="https://picsum.photos/id/110/300/300" alt="a cool landscape" />
-            <img id="right_bot" src="https://picsum.photos/id/1047/300/300" alt="inside a town between two big buildings" />
+            <img id="center" src={require('../assets/picgrid/centre.png')} alt="SHIELD" />
+            <img id="gImg1" src={require("../assets/picgrid/exam-paper-leaked.jpg")} alt="Exam" />
+            <img id="gImg2" src={require("../assets/picgrid/money-looted-atm.webp")} alt="ATM" />
+            <img id="gImg3" src={require("../assets/picgrid/eeg-cap.jpg")} alt="EEG Machine" />
+            <img id="gImg4" src={require("../assets/picgrid/important-docs.jpg")} alt="Important documents" />
+            <img id="gImg5" src={require("../assets/picgrid/evm.jpg")} alt="Electronic voting machine" />
 
           </div>
           <ul>
             <li>Leaking of exam paper.</li>
             <li>Money looted in between transfers to ATM.</li>
             <li>Expensive and valuable equipments stolen.</li>
-            <li>Important documents got plundered.</li>
+            <li className='active'>Important documents got plundered.</li>
             <li>Tampering of EVM.</li>
           </ul>
         </div>
