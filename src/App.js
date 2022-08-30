@@ -18,6 +18,10 @@ class App extends Component {
           <Route exact path="/" element={
             <Layout navLinks={[
               {
+                linkTxt: "Contact us",
+                link: '/contact'
+              },
+              {
                 linkTxt: "Sign in",
                 link: '/login'
               }
@@ -33,6 +37,10 @@ class App extends Component {
           <Route exact path="/dashboard" element={
             <Layout navLinks={[
               {
+                linkTxt: "Contact us",
+                link: '/contact'
+              },
+              {
                 linkTxt: "Sign out",
                 link: '/'
               }
@@ -42,6 +50,10 @@ class App extends Component {
           } />
           <Route exact path="/board" element={
             <Layout navLinks={[
+              {
+                linkTxt: "Contact us",
+                link: '/contact'
+              },
               {
                 linkTxt: "Dashboard",
                 link: '/dashboard'

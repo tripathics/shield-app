@@ -154,23 +154,26 @@ const Home = () => {
       <section className='container'>
         <h2>SHIELD solves them all</h2>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit alias eaque pariatur quibusdam.</p>
-        <div className='gallery'>
 
-          <img id="topp" src="https://picsum.photos/id/1040/300/300" alt="a house on a mountain"/>
-    <img id="centerr" src="https://picsum.photos/id/106/300/300" alt="sime pink flowers"/>
-    <img id="left_top" src="https://picsum.photos/id/136/300/300" alt="big rocks with some trees"/>
-    <img id="right_top" src="https://picsum.photos/id/1039/300/300" alt="a waterfall, a lot of tree and a great view from the sky"/>
-    <img id="left_bot" src="https://picsum.photos/id/110/300/300" alt="a cool landscape"/>
-    <img id="right_bot" src="https://picsum.photos/id/1047/300/300" alt="inside a town between two big buildings"/>
+        <div className='gallery-container'>
+          <div className='gallery'>
 
+            <img id="topp" src="https://picsum.photos/id/1040/300/300" alt="a house on a mountain" />
+            <img id="centerr" src={require('../assets/picgrid/centre.png')} alt="sime pink flowers" />
+            <img id="left_top" src="https://picsum.photos/id/136/300/300" alt="big rocks with some trees" />
+            <img id="right_top" src="https://picsum.photos/id/1039/300/300" alt="a waterfall, a lot of tree and a great view from the sky" />
+            <img id="left_bot" src="https://picsum.photos/id/110/300/300" alt="a cool landscape" />
+            <img id="right_bot" src="https://picsum.photos/id/1047/300/300" alt="inside a town between two big buildings" />
+
+          </div>
+          <ul>
+            <li>Leaking of exam paper.</li>
+            <li>Money looted in between transfers to ATM.</li>
+            <li>Expensive and valuable equipments stolen.</li>
+            <li>Important documents got plundered.</li>
+            <li>Tampering of EVM.</li>
+          </ul>
         </div>
-        <ul>
-          <li>Leaking of exam paper.</li>
-          <li>Money looted in between transfers to ATM.</li>
-          <li>Expensive and valuable equipments stolen.</li>
-          <li>Important documents got plundered.</li>
-          <li>Tampering of EVM.</li>
-        </ul>
       </section>
 
       <section className='container carousel'>
@@ -188,6 +191,7 @@ const Home = () => {
               <div className='dp-wrapper'>
                 <img className='dp' src={require('../assets/team/harshada.jpeg')} alt='S Harshada' />
               </div>
+              <p className='institute-name'>IIT-ISM Dhanbad</p>
               <h3 className='profile-name'>S Harshada</h3>
             </div>
           </div>
@@ -196,6 +200,7 @@ const Home = () => {
               <div className='dp-wrapper'>
                 <img className='dp' src={require('../assets/team/susham.jpeg')} alt='Susham' />
               </div>
+              <p className='institute-name'>NIT Rourkela</p>
               <h3 className='profile-name'>Susham Kumar Pradhan</h3>
             </div>
           </div>
@@ -204,6 +209,7 @@ const Home = () => {
               <div className='dp-wrapper'>
                 <img className='dp' src={require('../assets/team/prateek.jpeg')} alt='Prateek' />
               </div>
+              <p className='institute-name'>NIT Rourkela</p>
               <h3 className='profile-name'>Prateek Das</h3>
             </div>
           </div>
@@ -212,6 +218,7 @@ const Home = () => {
               <div className='dp-wrapper'>
                 <img className='dp' src={require('../assets/team/chandrashekhar.jpeg')} alt='Chandrashekhar' />
               </div>
+              <p className='institute-name'>NIT Arunachal Pradesh</p>
               <h3 className='profile-name'>Chandrashekhar Tripathi</h3>
             </div>
           </div>

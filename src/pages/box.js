@@ -1,7 +1,36 @@
 import React from 'react'
 import '../scss/box.scss'
 
+import { ref, child, get, update, set } from "firebase/database"
+import { app, db } from "../config/config.js"
+
+const getBox = () => {
+  let boxData;
+  const dbref = ref(db);
+  get(child(dbref, "SHIELDS/"+"ubk69xyin")).then((snapshot) => {
+    setTimeout(() => {
+      if (snapshot.exists()) {
+        boxData = {
+          id: snapshot.val().id,
+          name: snapshot.val().name,
+          locked: snapshot.val().locked,
+          online: snapshot.val().online,
+          src: snapshot.val().src,
+          dest: snapshot.val().dest,
+          curr_location: snapshot.val().curr_location
+        }
+      }
+      else {alert("No data found")}
+    }, 3000);
+  }).catch((error) => {
+    alert("Unsuccessful, error" + error);
+  });
+
+  return boxData
+}
+
 const Box = () => {
+  console.log(getBox())
   return (
     <div className='Box'>
       <section className='hero'>
@@ -18,7 +47,7 @@ const Box = () => {
               </ul>
             </div>
             <div>
-              <p>Unique ID: ubk69xyin</p>
+              <p>Box ID: ubk69xyin</p>
             </div>
           </div>
 

@@ -64,6 +64,13 @@ const Dashboard = () => {
         <div className='dash-hero-inner-container container'>
           <section>
             <h1 className='hero-heading'>Welcome, Susham</h1>
+            <div className='dash-text'>
+              <ul>
+                <li>Chairman<br/> Central Board of Secondary Education</li>
+                <li>Unique ID: 0x124fd</li>
+                <li>SHIELDs: 4 (1 active)</li>
+              </ul>
+            </div>
           </section>
           <section className='dash-dp-container'>
             <div className='dash-dp'>

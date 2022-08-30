@@ -19,7 +19,11 @@
     }
     
     .dash-hero {
-        background-color: rgb(36 105 179);
+        background-color: #190b1c;
+        // background-image: url(../assets/heroes/raw/dash.png);
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: cover;
         height: 50vh;
         position: relative;
     }
@@ -33,6 +37,7 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
+        color: #f6f7f9;
     }
     .dash-dp {
         overflow: hidden;
@@ -50,6 +55,16 @@
     .dash-hero .hero-heading {
         font-weight: 400;
         font-size: 3.2rem;
+        margin: 0 0 1.5rem;
+    }
+    .dash-text {
+        ul {
+            list-style-type: none;
+
+            li {
+                margin: 0.5rem 0;
+            }
+        }
     }
     
     
@@ -81,8 +96,16 @@
     }
     
     .img-wrapper {
-        max-height: 200px;
+        position: relative;
+        height: 200px;
         box-shadow: none;
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
     
     .dash-card-desc {
