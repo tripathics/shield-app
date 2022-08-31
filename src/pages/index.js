@@ -20,7 +20,7 @@ const CarouselCard = (props) => {
 const Carousel = () => {
   const cards = [
     {
-      imgsrc: "1.jpg",
+      imgsrc: "locate-anywhere.jpg",
       title: 'Track it from anywhere',
       subtitle: 'The box comes with inbuilt GPS to track it in realtime.' 
     },
@@ -40,17 +40,17 @@ const Carousel = () => {
       subtitle: 'It reduces the human workforce and physical intervention.' 
     },
     {
-      imgsrc: "stock.jpg",
+      imgsrc: "minimal-cost.jpg",
       title: 'Minimal cost',
       subtitle: 'It provides world-class security at a minimal cost.' 
     },
     {
-      imgsrc: "stock.jpg",
+      imgsrc: "secure-from-anywhere.jpg",
       title: 'Secure from any place',
       subtitle: 'The box can be remotely secured from any place.' 
     },
     {
-      imgsrc: "stock.jpg",
+      imgsrc: "tamper-proofing-final.png",
       title: 'Tamper proof',
       subtitle: 'If any evil deed or breakage occurs, it can generate notifications to the authorities..' 
     },
@@ -166,12 +166,12 @@ const Home = () => {
             <img id="gImg5" src={require("../assets/picgrid/evm.jpg")} alt="Electronic voting machine" />
 
           </div>
-          <ul>
-            <li>Leaking of exam paper.</li>
-            <li>Money looted in between transfers to ATM.</li>
-            <li>Expensive and valuable equipments stolen.</li>
-            <li className='active'>Important documents got plundered.</li>
-            <li>Tampering of EVM.</li>
+          <ul className='gallery-desc'>
+            <li id="gDesc1">Leaking of exam paper.</li>
+            <li id="gDesc2">Money looted in between transfers to ATM.</li>
+            <li id="gDesc3">Expensive and valuable equipments stolen.</li>
+            <li id="gDesc4" className='active'>Important documents got plundered.</li>
+            <li id="gDesc5">Tampering of EVM.</li>
           </ul>
         </div>
       </section>
@@ -191,7 +191,7 @@ const Home = () => {
               <div className='dp-wrapper'>
                 <img className='dp' src={require('../assets/team/harshada.jpeg')} alt='S Harshada' />
               </div>
-              <p className='institute-name'>IIT-ISM Dhanbad</p>
+              <p className='institute-name'>IIT (ISM) Dhanbad</p>
               <h3 className='profile-name'>S Harshada</h3>
             </div>
           </div>

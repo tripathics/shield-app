@@ -14,13 +14,13 @@ const Footer = () => {
                 <div className="first">
                     <ShieldLogo fill="white" textColor="white" height="53" width="53"/>
                     <div className="social">
-                        <a href="https://facebook.com" className="fb">
+                        <a href="#" className="fb">
                             <FbIcon className='socialSvg' />
                         </a>
-                        <a href="https://facebook.com" className="twitter">
+                        <a href="#" className="twitter">
                             <TwitterIcon className='socialSvg' />
                         </a>
-                        <a href="https://facebook.com" className="github">
+                        <a href="https://github.com/tripathics/shield-app" className="github">
                             <GithubIcon className='socialSvg' />
                         </a>
                     </div>
