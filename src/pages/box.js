@@ -1,36 +1,40 @@
 import React from 'react'
 import '../scss/box.scss'
 
-import { ref, child, get, update, set } from "firebase/database"
-import { app, db } from "../config/config.js"
+import { ref, child, onValue, update } from "firebase/database"
+import { db } from "../firebaseConfig"
 
-const getBox = () => {
-  let boxData;
-  const dbref = ref(db);
-  get(child(dbref, "SHIELDS/"+"ubk69xyin")).then((snapshot) => {
-    setTimeout(() => {
-      if (snapshot.exists()) {
-        boxData = {
-          id: snapshot.val().id,
-          name: snapshot.val().name,
-          locked: snapshot.val().locked,
-          online: snapshot.val().online,
-          src: snapshot.val().src,
-          dest: snapshot.val().dest,
-          curr_location: snapshot.val().curr_location
-        }
-      }
-      else {alert("No data found")}
-    }, 3000);
-  }).catch((error) => {
-    alert("Unsuccessful, error" + error);
+// references
+let boxData;
+
+const updateBoxData = () => {
+  if (boxData) {
+    const ref =  document.getElementById("lockStatus");
+    const lastUpdate = document.getElementById("lastUpdate");
+    if (boxData["LOCK_STATUS"] === 0) {
+      ref.innerHTML = "Unlocked";
+    } else {
+      ref.innerHTML = "Locked";
+    }
+
+    let curr_time = new Date();
+    lastUpdate.innerHTML = curr_time;
+  }
+}
+
+const dbref = ref(db);
+onValue(child(dbref, "/"), (snapshot) => {
+  boxData = snapshot.val();
+  updateBoxData();
+})
+
+const updateLock = (st) => {
+  update(dbref, {
+    '/LOCK_STATUS/': st
   });
-
-  return boxData
 }
 
 const Box = () => {
-  console.log(getBox())
   return (
     <div className='Box'>
       <section className='hero'>
@@ -42,8 +46,8 @@ const Box = () => {
           <div className='box-details'>
             <div>
               <ul>
-                <li>SHIELD status: Locked</li>
-                <li>Last update: <time>Thu, Aug 25 - 09:13</time></li>
+                <li>SHIELD status: <span id="lockStatus"></span></li>
+                <li>Last update: <time id="lastUpdate">Thu, Aug 25 - 09:13</time></li>
               </ul>
             </div>
             <div>
@@ -70,7 +74,7 @@ const Box = () => {
           <div className='location-progress'>
             <div className='curr' />
             <div className='pin'>
-              <img src={require('../assets/icons/box.png')} alt='location pin'/>
+              <img src={require('../assets/icons/box.png')} alt='location pin' />
             </div>
           </div>
           <div className='place'>
@@ -85,8 +89,8 @@ const Box = () => {
 
         <div className='lock-control'>
           <div className='lock-unlock-btns'>
-            <button>Lock</button>
-            <button>Unlock</button>
+            <button onClick={() => updateLock(1)}>Lock</button>
+            <button onClick={() => updateLock(0)}>Unlock</button>
           </div>
         </div>
       </section>

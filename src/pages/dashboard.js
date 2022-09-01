@@ -1,9 +1,14 @@
 import React from 'react'
-// import '../dashboard.css'
 import '../scss/dashboard.scss'
 
 const Card = (props) => {
   const { boardName, boxState, imgsrc } = props
+  let boxLn = <></>
+  if (boxState === "Active") {
+    boxLn = <p><a href="/board">{boardName}</a></p>
+  } else {
+    boxLn = <p>{boardName}</p>
+  }
   return (
     <div className='card'>
       <div className='img-wrapper'>
@@ -11,7 +16,7 @@ const Card = (props) => {
       </div>
       <div className='dash-card-desc'>
         <h4 className='dash-card-title'>
-          <a href="/board">{boardName}</a>
+          {boxLn}
         </h4>
         <div className='dash-card-subtitle'>
           <div className={boxState}></div>
@@ -26,28 +31,28 @@ const Cards = () => {
   const cards = [
     {
       name: 'CBSE Center 1',
-      desc: 'Active',      
+      status: 'Active',
       imgsrc: 'stock.jpg'
     },
     {
       name: 'CBSE Center 2',
-      desc: 'Inactive',
+      status: 'Inactive',
       imgsrc: 'stock.jpg'
     },
     {
       name: 'CBSE Center 3',
-      desc: 'Inactive',
+      status: 'Inactive',
       imgsrc: 'stock.jpg'
     },
     {
       name: 'CBSE Center 4',
-      desc: 'Inactive',
+      status: 'Inactive',
       imgsrc: 'stock.jpg'
     }
   ]
 
   const cardsComponent = cards.map(card => {
-    return <Card boardName={card.name} boxState={card.desc} imgsrc={card.imgsrc} />
+    return <Card boardName={card.name} boxState={card.status} imgsrc={card.imgsrc} />
   })
   
   return (
