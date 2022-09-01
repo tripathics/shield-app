@@ -73,7 +73,7 @@ const Dashboard = () => {
     if (!authToken) {
       navigate('/login');
     }
-  })
+  }, [])
   return (
     <div className='Dashboard'>
       <div className='dash-hero'>
