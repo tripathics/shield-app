@@ -22,6 +22,14 @@ nav#nav-bar {
         padding-left: 0;
         height: 100%;
     }
+
+    button.nav-link {
+        background-color: transparent;
+        border: none;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        font-size: 1rem;
+    }
     
     .nav-link {
         height: 100%;

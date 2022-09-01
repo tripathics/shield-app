@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect} from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../scss/dashboard.scss'
 
 const Card = (props) => {
@@ -51,8 +52,8 @@ const Cards = () => {
     }
   ]
 
-  const cardsComponent = cards.map(card => {
-    return <Card boardName={card.name} boxState={card.status} imgsrc={card.imgsrc} />
+  const cardsComponent = cards.map((card, i) => {
+    return <Card key={i} boardName={card.name} boxState={card.status} imgsrc={card.imgsrc} />
   })
   
   return (
@@ -63,6 +64,16 @@ const Cards = () => {
 }
 
 const Dashboard = () => {
+  let navigate = useNavigate()
+  useEffect(() => {
+    let authToken = sessionStorage.getItem('Auth Token')
+    if (authToken) {
+      navigate('/dashboard');
+    }
+    if (!authToken) {
+      navigate('/login');
+    }
+  })
   return (
     <div className='Dashboard'>
       <div className='dash-hero'>

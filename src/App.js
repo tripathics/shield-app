@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import Layout from './components/Layout/layout'
@@ -10,22 +9,50 @@ import Login from './pages/login';
 import Dashboard from './pages/dashboard';
 import Box from './pages/box';
 
+
+const generateNavLi = () => {
+  let conditionalNavLi = []
+  let authToken = sessionStorage.getItem('Auth Token')
+  if (authToken) {
+    conditionalNavLi = [
+      {
+        linkTxt: "Dashboard",
+        link: '/dashboard'
+      },
+      {
+        linkTxt: "Sign out",
+        link: '/',
+        id: 'logout'
+      }
+    ]
+  }
+  if (!authToken) {
+    conditionalNavLi = [
+      {
+        linkTxt: "Sign in",
+        link: '/login'
+      }
+    ]
+  }
+  return conditionalNavLi
+}
+
+
 class App extends Component {
+  defaultNavLi = [
+    {
+      linkTxt: "Contact us",
+      link: "/contact"
+    }
+  ]
+
   render() {
+    const navLi = [...this.defaultNavLi ,...generateNavLi()]
     return (
       <Router>
         <Routes>
           <Route exact path="/" element={
-            <Layout navLinks={[
-              {
-                linkTxt: "Contact us",
-                link: '/contact'
-              },
-              {
-                linkTxt: "Sign in",
-                link: '/login'
-              }
-            ]}>
+            <Layout navLinks={navLi}>
               <Home />
             </Layout>
           } />
@@ -42,27 +69,15 @@ class App extends Component {
               },
               {
                 linkTxt: "Sign out",
-                link: '/'
+                link: '/',
+                id: 'logout'
               }
             ]}>
               <Dashboard/>
             </Layout>
           } />
           <Route exact path="/board" element={
-            <Layout navLinks={[
-              {
-                linkTxt: "Contact us",
-                link: '/contact'
-              },
-              {
-                linkTxt: "Dashboard",
-                link: '/dashboard'
-              },
-              {
-                linkTxt: "Sign out",
-                link: '/'
-              }
-            ]}>
+            <Layout navLinks={navLi}>
               <Box />
             </Layout>
           } />
