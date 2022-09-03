@@ -17,13 +17,13 @@ const Footer = () => {
                         <p className='ftr-copy'>&copy; SHIELD 2022 - Present</p>
                     </div>
                     <div className="social">
-                        <a href="#" className="fb">
+                        <a href="/" className="fb">
                             <FbIcon className='socialSvg' />
                         </a>
-                        <a href="#" className="twitter">
+                        <a href="/" className="twitter">
                             <TwitterIcon className='socialSvg' />
                         </a>
-                        <a href="https://github.com/tripathics/shield-app" className="github">
+                        <a target="_blank" rel="noreferrer" href="https://github.com/tripathics/shield-app" className="github">
                             <GithubIcon className='socialSvg' />
                         </a>
                     </div>

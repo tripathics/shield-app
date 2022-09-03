@@ -69,10 +69,6 @@ const Login = () => {
             </div>
 
             <div className='inp checks'>
-              <div className="show-passwd">
-                  <input type="checkbox" name="show-passwd" id="showPasswd"/>
-                  <label htmlFor="show-passwd">Show password</label>
-                </div>
               <div className="pref">
                   <input type="checkbox" name="remember-me" id="rememberMe" />
                   <label htmlFor="remember-me">Remember me</label>

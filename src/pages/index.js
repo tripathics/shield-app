@@ -281,7 +281,7 @@ const Home = () => {
           <a href="mailto:sharshada2001@gmail.com">
             <button>
               <span>
-                <img src='./media/icons/mail.png' />
+                <img src='./media/icons/mail.png' alt="mail icon" />
               </span>
               <span>Contact us</span>
             </button>
