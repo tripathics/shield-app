@@ -17,6 +17,12 @@ const NavLink = (props) => {
         <li>{linkTxt}</li>
       </a>
     )
+  } else if (id === 'userDp') {
+    return (
+    <a className='nav-link' href={link}>
+      <img style={{height: "100%"}} src='./media/dash-dp2.png' alt='profile'/>
+    </a>
+    )
   } else {
     return (
       <a className='nav-link' href={link}>

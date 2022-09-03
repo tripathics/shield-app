@@ -27,17 +27,17 @@ const Carousel = () => {
     {
       imgsrc: "notification.jpg",
       title: 'Get notified via SMS and phone call',
-      subtitle: 'In places with poor or no internet connectiviey, the box can notify via SMS and phone call to the registered mobile.' 
+      subtitle: 'In places with poor or no internet connectivity, the box can notify via SMS and phone call to the registered mobile.' 
     },
     {
-      imgsrc: "3.jpg",
+      imgsrc: "wireless.jpg",
       title: 'Wireless charging',
       subtitle: 'Wireless charging comes built in the box to easily recharge the battery during transportation.' 
     },
     {
-      imgsrc: "less-humans.jpeg",
-      title: 'Less humans',
-      subtitle: 'It reduces the human workforce and physical intervention.' 
+      imgsrc: "secure-from-anywhere.jpg",
+      title: 'Secure from any place',
+      subtitle: 'The box can be remotely secured from any place.' 
     },
     {
       imgsrc: "minimal-cost.jpg",
@@ -45,9 +45,9 @@ const Carousel = () => {
       subtitle: 'It provides world-class security at a minimal cost.' 
     },
     {
-      imgsrc: "secure-from-anywhere.jpg",
-      title: 'Secure from any place',
-      subtitle: 'The box can be remotely secured from any place.' 
+      imgsrc: "less-humans.jpg",
+      title: 'Less humans',
+      subtitle: 'It reduces the human workforce and physical intervention.' 
     },
     {
       imgsrc: "tamper-proofing-final.png",
@@ -139,52 +139,90 @@ const Carousel = () => {
 }
 
 const Home = () => {
+  const highlightDesc = (descId) => {
+    console.log('inside highlightDesc');
+    let hlDesc = document.getElementById(descId);
+    let gDesc = document.getElementById('gDesc');
+
+    console.log(hlDesc)
+    console.log(gDesc.classList)
+
+    if (!hlDesc.classList.contains('active')) {
+      hlDesc.classList.add('active');
+    }
+    if (!gDesc.classList.contains('gallery-hover')) {
+      gDesc.classList.add('gallery-hover');
+    }
+  }
+
+  const removeHlDesc = (descId) => {
+    console.log('inside removehighlightDesc');
+    let hlDesc = document.getElementById(descId);
+    let gDesc = document.getElementById('gDesc');
+    if (hlDesc.classList.contains('active')) {
+      hlDesc.classList.remove('active');
+    }
+    if (gDesc.classList.contains('gallery-hover')) {
+      gDesc.classList.remove('gallery-hover');
+    }
+  } 
+
   return (
     <div className='Home'>
       <header className='hero'>
         <div className='hero-txt'>
           <h1>SHIELD</h1>
-          <p>We provide the perfect ecosystem for World-Class Security</p>
+          <p>Your Possessions, Our Responsibility</p>
         </div>
       </header>
       <section className='container'>
         <h2>What is SHIELD?</h2>
-        <p>SHIELD is an IoT-based technology that provides a perfect ecosystem for world-class Security at a minimal cost.</p>
+        <div className='what-is-shield'>
+          <div>
+            <p>SHIELD is an IoT-based technology that provides a perfect ecosystem for world-class Security at a minimal cost.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, eius ipsa vitae ea beatae itaque! Aperiam facere neque error sed?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta nesciunt sit quod nemo fugiat ipsam nisi ex doloribus laborum unde quos iste eius, voluptatum, consectetur commodi odio quas! Placeat, nisi!</p>
+          </div>
+          <img src={require('../assets/what-is-shield.png')} alt='What is shield?'/>
+        </div>
+        
       </section>
       <section className='container'>
         <h2>SHIELD solves them all</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit alias eaque pariatur quibusdam.</p>
+        <p>We provide the security you need to make a world of difference.</p>
 
         <div className='gallery-container'>
-          <div className='gallery'>
+          <div className='gallery' id='gImg'>
 
             <img id="center" src={require('../assets/picgrid/centre.png')} alt="SHIELD" />
-            <img id="gImg1" src={require("../assets/picgrid/exam-paper-leaked.jpg")} alt="Exam" />
-            <img id="gImg2" src={require("../assets/picgrid/money-looted-atm.webp")} alt="ATM" />
-            <img id="gImg3" src={require("../assets/picgrid/eeg-cap.jpg")} alt="EEG Machine" />
-            <img id="gImg4" src={require("../assets/picgrid/important-docs.jpg")} alt="Important documents" />
-            <img id="gImg5" src={require("../assets/picgrid/evm.jpg")} alt="Electronic voting machine" />
+            <img onMouseOver={() => highlightDesc('gDesc1')} onMouseOut={(() => removeHlDesc('gDesc1'))} id="gImg1" src={require("../assets/picgrid/exam-paper-leaked.jpg")} alt="Exam" />
+            <img onMouseOver={() => highlightDesc('gDesc2')} onMouseOut={(() => removeHlDesc('gDesc2'))} id="gImg2" src={require("../assets/picgrid/money-looted-atm.webp")} alt="ATM" />
+            <img onMouseOver={() => highlightDesc('gDesc3')} onMouseOut={(() => removeHlDesc('gDesc3'))} id="gImg3" src={require("../assets/picgrid/eeg-cap.jpg")} alt="EEG Machine" />
+            <img onMouseOver={() => highlightDesc('gDesc4')} onMouseOut={(() => removeHlDesc('gDesc4'))} id="gImg4" src={require("../assets/picgrid/important-docs.jpg")} alt="Important documents" />
+            <img onMouseOver={() => highlightDesc('gDesc5')} onMouseOut={(() => removeHlDesc('gDesc5'))} id="gImg5" src={require("../assets/picgrid/evm.jpg")} alt="Electronic voting machine" />
 
           </div>
-          <ul className='gallery-desc'>
-            <li id="gDesc1">Leaking of exam paper.</li>
-            <li id="gDesc2">Money looted in between transfers to ATM.</li>
-            <li id="gDesc3">Expensive and valuable equipments stolen.</li>
-            <li id="gDesc4" className='active'>Important documents got plundered.</li>
-            <li id="gDesc5">Tampering of EVM.</li>
-          </ul>
+          <div id='gDesc' className='gallery-desc'>
+            <ul>
+              <li id="gDesc1">Leaking of exam paper.</li>
+              <li id="gDesc2">Money looted in between transfers to ATM.</li>
+              <li id="gDesc3">Expensive and valuable equipments stolen.</li>
+              <li id="gDesc4">Important documents got plundered.</li>
+              <li id="gDesc5">Tampering of EVM.</li>
+            </ul>
+          </div>
         </div>
       </section>
 
       <section className='container carousel'>
         <h2>Why SHIELD?</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, iure.</p>
+        <p></p>
         <Carousel />
       </section>
 
       <section className='container'>
-        <h2>Our team</h2>
-        <p>Team Revolutionists!</p>
+        <h2 id='ourTeam'>Our team</h2>
+        <p>The people behind SHIELD.. Team Revolutionists!</p>
         <div className='team'>
           <div className='profile'>
             <div className='profile-card'>
@@ -193,6 +231,10 @@ const Home = () => {
               </div>
               <p className='institute-name'>IIT (ISM) Dhanbad</p>
               <h3 className='profile-name'>S Harshada</h3>
+              <div className='social'>
+                <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/s-harshada-064898204/">LinkedIn</a>
+                <a href="https://github.com/tripathics">GitHub</a>
+              </div>
             </div>
           </div>
           <div className='profile'>
@@ -202,6 +244,10 @@ const Home = () => {
               </div>
               <p className='institute-name'>NIT Rourkela</p>
               <h3 className='profile-name'>Susham Kumar Pradhan</h3>
+              <div className='social'>
+                <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/susham-kumar-pradhan-4999a820a/">LinkedIn</a>
+                <a target="_blank" rel="noreferrer" href="https://github.com/sushamkumar8">GitHub</a>
+              </div>
             </div>
           </div>
           <div className='profile'>
@@ -211,6 +257,10 @@ const Home = () => {
               </div>
               <p className='institute-name'>NIT Rourkela</p>
               <h3 className='profile-name'>Prateek Das</h3>
+              <div className='social'>
+                <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/prateeek17/">LinkedIn</a>
+                <a target="_blank" rel="noreferrer" href="https://www.github.com/prateek27das">GitHub</a>
+              </div>
             </div>
           </div>
           <div className='profile'>
@@ -220,8 +270,22 @@ const Home = () => {
               </div>
               <p className='institute-name'>NIT Arunachal Pradesh</p>
               <h3 className='profile-name'>Chandrashekhar Tripathi</h3>
+              <div className='social'>
+                <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/chandrashekhar-tripathi-1aa1a6201">LinkedIn</a>
+                <a target="_blank" rel="noreferrer" href="https://tripathics.github.io/homepage">Portfolio</a>
+              </div>
             </div>
           </div>
+        </div>
+        <div className='contact-us'>
+          <a href="mailto:sharshada2001@gmail.com">
+            <button>
+              <span>
+                <img src='./media/icons/mail.png' />
+              </span>
+              <span>Contact us</span>
+            </button>
+          </a>
         </div>
       </section>
     </div>

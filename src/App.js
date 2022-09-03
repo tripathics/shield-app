@@ -9,7 +9,6 @@ import Login from './pages/login';
 import Dashboard from './pages/dashboard';
 import Box from './pages/box';
 
-
 const generateNavLi = () => {
   let conditionalNavLi = []
   let authToken = sessionStorage.getItem('Auth Token')
@@ -23,6 +22,11 @@ const generateNavLi = () => {
         linkTxt: "Sign out",
         link: '/',
         id: 'logout'
+      },
+      {
+        linkTxt: '',
+        link: '/dashboard',
+        id: 'userDp'
       }
     ]
   }
@@ -42,7 +46,7 @@ class App extends Component {
   defaultNavLi = [
     {
       linkTxt: "Contact us",
-      link: "/contact"
+      link: "/#ourTeam"
     }
   ]
 
@@ -65,12 +69,17 @@ class App extends Component {
             <Layout navLinks={[
               {
                 linkTxt: "Contact us",
-                link: '/contact'
+                link: '/#ourTeam'
               },
               {
                 linkTxt: "Sign out",
                 link: '/',
                 id: 'logout'
+              },
+              {
+                linkTxt: '',
+                link: '/dashboard',
+                id: 'userDp'
               }
             ]}>
               <Dashboard/>

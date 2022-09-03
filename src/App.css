@@ -29,8 +29,9 @@
   --red-3: rgb(211, 125, 54);
   --red-4: rgb(205, 88, 60);
   --red-5: rgb(171, 46, 63);
-  --blue: rgb(7, 167, 230);
   --blue-05: rgb(251, 253, 255);
+  --blue: rgb(7, 167, 230);
+  --blue-15: #e1e9f8;
   --blue-1: rgb(112, 189, 238);
   --blue-2: rgb(97, 139, 225);
   --blue-3: rgb(91, 94, 213);
@@ -54,6 +55,7 @@
   --color-base: rgb(58, 63, 68);
 
   --nav-height: 4.375rem;
+  --main-offset: calc(var(--nav-height) + 0.5rem)
   --footer-height: 10.25rem;
   font-size: 16px;
 }
@@ -62,6 +64,10 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: var(--nav-height);
 }
 
 /* base font */
@@ -124,3 +130,6 @@ header > h3 {
   width: 100%;
 }
 
+#user {
+  background: url(../public/media/dash-dp2.png);
+}

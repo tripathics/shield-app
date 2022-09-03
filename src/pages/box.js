@@ -14,15 +14,18 @@ const updateBoxData = () => {
     const lockctl = document.getElementById("lockCtl");
     const lockbtn = document.getElementById("lockBtn");
     const unlockbtn = document.getElementById("unlockBtn");
+    const boxHero = document.getElementById("boxHero");
+    const brokenAlert = document.getElementById("alert");
+    const locateBtn = document.getElementById("locate");
 
-    if (boxData["LOCK_STATUS"] === 0) {
+    if (boxData["LOCK_STATUS"] === 1) {
       ref.innerHTML = "Unlocked";
       unlockbtn.setAttribute("disabled", "");
       lockbtn.removeAttribute("disabled");
       
       unlockbtn.classList.add("disabled");
       lockbtn.classList.remove("disabled");
-    } else {
+    } else if (boxData["LOCK_STATUS"] === 0) {
       ref.innerHTML = "Locked";
       lockbtn.setAttribute("disabled", "");
       unlockbtn.removeAttribute("disabled");
@@ -30,17 +33,30 @@ const updateBoxData = () => {
       unlockbtn.classList.remove("disabled");
       lockbtn.classList.add("disabled");
     }
+    if (boxData["LOCATION"]) {
+      locateBtn.setAttribute("href", `http://www.google.com/maps/place/${boxData["LOCATION"]}`);
+      locateBtn.firstChild.innerHTML = "Locate on map"
+    }
+    ref.style.fontWeight = 600;
     lockctl.style.display = "block";
 
+    if (boxData["ALERT"] === 1) {
+      boxHero.classList.add('tampered');
+      brokenAlert.style.display = 'block';
+
+    } else {
+      boxHero.classList.remove('tampered');
+      brokenAlert.style.display = 'none';
+    }
+
     let curr_time = new Date();
-    lastUpdate.innerHTML = curr_time;
+    lastUpdate.innerHTML = curr_time.toString().slice(0, curr_time.toString().length - 21);
   }
 }
 
 const dbref = ref(db);
 
 const updateLock = (st) => {
-  console.log("Button clicked: " + st);
   update(dbref, {
     '/LOCK_STATUS/': st
   });
@@ -57,11 +73,11 @@ class Box extends Component {
   render() {
     return (
       <div className='Box'>
-        <section className='hero'>
+        <section id="boxHero" className='hero'>
           <section className='container'>
             <div className='heading'>
               <h1>CBSE Center 1</h1>
-              <div className='hero-status'><div className='indicator active' /> </div>
+              <div className='hero-status' id="heroInd"><div className='indicator active' /> </div>
             </div>
             <div className='box-details'>
               <div>
@@ -78,9 +94,14 @@ class Box extends Component {
           </section>
         </section>
         <section className='container content'>
+          <div id='alert'>
+            <p><span className='hd'>Alert:</span> The box has been broken!</p>
+          </div>
           <div className='section-heading'>
             <h2>Track your box</h2>
-            <button className='show-on-map'>Locate on map</button>
+            <a target="_blank" rel="noreferrer" id="locate" href="/board">
+              <button className='show-on-map'>Loading...</button>
+            </a>
           </div>
           <div className='tracker'>
             <div className='place'>
@@ -109,8 +130,8 @@ class Box extends Component {
 
           <div id="lockCtl" className='lock-control'>
             <div className='lock-unlock-btns'>
-              <button id="lockBtn" onClick={() => updateLock(1)} className="disabled">Lock</button>
-              <button id="unlockBtn" onClick={() => updateLock(0)} className="disabled">Unlock</button>
+              <button id="lockBtn" onClick={() => updateLock(0)} className="disabled">Lock</button>
+              <button id="unlockBtn" onClick={() => updateLock(1)} className="disabled">Unlock</button>
             </div>
           </div>
         </section>

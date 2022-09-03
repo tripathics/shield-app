@@ -33,22 +33,22 @@ const Cards = () => {
     {
       name: 'CBSE Center 1',
       status: 'Active',
-      imgsrc: 'stock.jpg'
+      imgsrc: 'centre1.jpg'
     },
     {
       name: 'CBSE Center 2',
       status: 'Inactive',
-      imgsrc: 'stock.jpg'
+      imgsrc: 'centre2.webp'
     },
     {
       name: 'CBSE Center 3',
       status: 'Inactive',
-      imgsrc: 'stock.jpg'
+      imgsrc: 'centre3.jpg'
     },
     {
       name: 'CBSE Center 4',
       status: 'Inactive',
-      imgsrc: 'stock.jpg'
+      imgsrc: 'centre5.webp'
     }
   ]
 
@@ -79,10 +79,10 @@ const Dashboard = () => {
       <div className='dash-hero'>
         <div className='dash-hero-inner-container container'>
           <section>
-            <h1 className='hero-heading'>Welcome, Susham</h1>
+            <h1 className='hero-heading'>Welcome, Nidhi</h1>
             <div className='dash-text'>
               <ul>
-                <li>Chairman<br/> Central Board of Secondary Education</li>
+                <li>Nidhi Chibber IAS, Chairman<br/> Central Board of Secondary Education</li>
                 <li>Unique ID: 0x124fd</li>
                 <li>SHIELDs: 4 (1 active)</li>
               </ul>
@@ -90,7 +90,7 @@ const Dashboard = () => {
           </section>
           <section className='dash-dp-container'>
             <div className='dash-dp'>
-              <img src='./media/cases/3.jpg' alt='Profie'/>
+              <img src='./media/dash-dp2.png' alt='Profie'/>
             </div>
           </section>
         </div>

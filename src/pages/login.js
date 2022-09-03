@@ -9,6 +9,7 @@ const Login = () => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
   let navigate = useNavigate()
   
   const handleChange = (event) => {
@@ -32,7 +33,7 @@ const Login = () => {
       }
     }).catch(error => {
       console.log(error)
-      alert('You must sign in with correct credentials!');
+      alert('Invalid username or password!');
     })
   }
   return (
@@ -50,6 +51,8 @@ const Login = () => {
                 type="email" 
                 name="email" 
                 id="userid" 
+                autoComplete='off' 
+                placeholder='someone@example.com'
                 onChange={handleChange} 
                 value={email} 
               />
@@ -59,23 +62,24 @@ const Login = () => {
               <input type="password" 
                 name="password" 
                 id="password" 
+                placeholder='**********' 
                 value={password} 
                 onChange={handleChange} 
               />
-              <div className="inp show-passwd">
-                <input type="checkbox" name="show-passwd" id="show-passwd"/>
-                <label htmlFor="show-passwd">Show password</label>
-              </div>
             </div>
-            <div className="inp pref">
-              <a href="/">Forgot Password?</a>
-              <div className="inp show-passwd">
-                <input type="checkbox" name="show-passwd" id="forgot-passwd" />
-                <label htmlFor="remember-me">Remember me</label>
+
+            <div className='inp checks'>
+              <div className="show-passwd">
+                  <input type="checkbox" name="show-passwd" id="showPasswd"/>
+                  <label htmlFor="show-passwd">Show password</label>
+                </div>
+              <div className="pref">
+                  <input type="checkbox" name="remember-me" id="rememberMe" />
+                  <label htmlFor="remember-me">Remember me</label>
               </div>
             </div>
             <div className="inp">
-              <button type="submit">Sign in</button>
+              <button type="submit" id='signinBtn'>Sign in</button>
             </div>
           </form>
         </section>

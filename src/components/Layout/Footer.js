@@ -13,6 +13,9 @@ const Footer = () => {
             <div className="container">
                 <div className="first">
                     <ShieldLogo fill="white" textColor="white" height="53" width="53"/>
+                    <div>
+                        <p className='ftr-copy'>&copy; SHIELD 2022 - Present</p>
+                    </div>
                     <div className="social">
                         <a href="#" className="fb">
                             <FbIcon className='socialSvg' />
@@ -25,9 +28,7 @@ const Footer = () => {
                         </a>
                     </div>
                 </div>
-                <div>
-                    <p className='ftr-copy'>&copy; SHIELD 2022 - Present</p>
-                </div>
+        
             </div>
         </footer>
     )

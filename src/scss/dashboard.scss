@@ -17,17 +17,17 @@
         margin: 1rem 0;
         color: var(--gray-8);
     }
-    
+
     .dash-hero {
-        background-color: #190b1c;
-        // background-image: url(../assets/heroes/raw/dash.png);
+        background-color: var(--blue-5);
+        background-image: url(../assets/heroes/dash-hero.webp);
         background-repeat: no-repeat;
         background-position: right center;
         background-size: cover;
         height: 50vh;
         position: relative;
     }
-    
+
     .dash-hero-inner-container {
         position: absolute;
         top: 50%;
@@ -43,13 +43,15 @@
         overflow: hidden;
         height: 220px;
         width: 220px;
-        border-radius: 50%;
-        position: relative;
+        // border-radius: 50%;
+        // position: relative;
     }
     .dash-dp > img {
-        position: absolute;
-        top: -10%;
-        right: -40%;
+        // position: absolute;
+        // top: -10%;
+        // right: -40%;
+        height: 100%;
+        width: auto;
     }
     
     .dash-hero .hero-heading {
@@ -77,7 +79,7 @@
 
     .card {
         border-radius: 0.5rem;
-        border: solid 1px var(--gray-4);
+        // border: solid 1px var(--gray-4);
         overflow: hidden;
         box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
         transition: box-shadow 0.08s ease-out;
@@ -96,15 +98,17 @@
     }
     
     .img-wrapper {
-        position: relative;
-        height: 200px;
+        // position: relative;
+        height: 220px;
         box-shadow: none;
 
         img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            // position: absolute;
+            // top: 50%;
+            // left: 50%;
+            // transform: translate(-50%, -50%);\
+            width: 100%;
+            height: auto;
         }
     }
     
