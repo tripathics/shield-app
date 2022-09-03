@@ -43,10 +43,6 @@ const updateBoxData = () => {
     if (boxData["ALERT"] === 1) {
       boxHero.classList.add('tampered');
       brokenAlert.style.display = 'block';
-
-    } else {
-      boxHero.classList.remove('tampered');
-      brokenAlert.style.display = 'none';
     }
 
     let curr_time = new Date();
