@@ -3,6 +3,7 @@ import '../scss/box.scss'
 
 import { ref, child, onValue, update } from "firebase/database"
 import { db } from "../firebaseConfig"
+import { confirmPasswordReset } from 'firebase/auth';
 
 // references
 let boxData;
@@ -17,6 +18,8 @@ const updateBoxData = () => {
     const boxHero = document.getElementById("boxHero");
     const brokenAlert = document.getElementById("alert");
     const locateBtn = document.getElementById("locate");
+
+    console.log(boxData)
 
     if (boxData["LOCK_STATUS"] === 1) {
       ref.innerHTML = "Unlocked";
@@ -62,6 +65,7 @@ class Box extends Component {
   componentDidMount() {
     onValue(child(dbref, "/"), (snapshot) => {
       boxData = snapshot.val();
+      console.log(boxData)
       updateBoxData();
     })
   }
